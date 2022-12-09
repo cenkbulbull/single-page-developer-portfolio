@@ -4,51 +4,31 @@
 			<h2>Projects</h2>
 		</div>
 		<div class="row">
-			<div class="col-md-12 col-lg-6">
-				<img src="../assets/images/p1.png" alt="">
-				<h3>DESIGN PORTFOLIO</h3>
-				<span>HTML CSS</span>
-			</div>
-			<div class="col-md-12 col-lg-6">
-				<img src="../assets/images/p2.jpg" alt="">
-				<h3>E-LEARNING LANDING PAGE</h3>
-				<span>HTML CSS</span>
-			</div>
-			<div class="col-md-12 col-lg-6">
-				<img src="../assets/images/p2.jpg" alt="">
-				<h3>TO DO WEB APP</h3>
-				<span>HTML CSS JAVASCRIPT</span>
-			</div>
-			<div class="col-md-12 col-lg-6">
-				<img src="../assets/images/p3.jpg" alt="">
-				<h3>ENTERTAINMENT WEB APP</h3>
-				<span>HTML CSS JAVASCRIPT</span>
-			</div>
-			<div class="col-md-12 col-lg-6">
-				<img src="../assets/images/p1.png" alt="">
-				<h3>MEMORY GAME</h3>
-				<span>VUE</span>
-			</div>
-			<div class="col-md-12 col-lg-6">
-				<img src="../assets/images/p2.jpg" alt="">
-				<h3>ART GALLERY SHOWCASE</h3>
-				<span>HTML CSS JAVASCRIPT</span>
-			</div>
-			<div class="col-md-12 col-lg-6">
-				<img src="../assets/images/p2.jpg" alt="">
-				<h3>ART GALLERY SHOWCASE</h3>
-				<span>HTML CSS JAVASCRIPT</span>
-			</div>
-			<div class="col-md-12 col-lg-6">
-				<img src="../assets/images/p3.jpg" alt="">
-				<h3>MEMORY GAME</h3>
-				<span>HTML CSS</span>
+			<div v-for="(project,index) in projects" :key="index" class="col-md-12 col-lg-6">
+				<img :src="'src/assets/images/'+project.src" alt="">
+				<h3>{{project.name}}</h3>
+				<span>{{project.language}}</span>
 			</div>
 		</div>
 	</div>
 </template>
 <script>
-	
+	export default{
+		data(){
+			return{
+				projects:[
+					{name:"DESIGN PORTFOLIO",language:"HTML CSS", src:"p1.png"},
+					{name:"E-LEARNING LANDING PAGE",language:"HTML CSS", src:"p2.jpg"},
+					{name:"TO DO WEB APP",language:"HTML CSS JAVASCRIPT", src:"p2.jpg"},
+					{name:"ENTERTAINMENT WEB APP",language:"HTML CSS JAVASCRIPT", src:"p3.jpg"},
+					{name:"MEMORY GAME",language:"VUE", src:"p1.png"},
+					{name:"ART GALLERY SHOWCASE",language:"HTML CSS JAVASCRIPT", src:"p2.jpg"},
+					{name:"ART GALLERY SHOWCASE",language:"HTML CSS JAVASCRIPT", src:"p2.jpg"},
+					{name:"MEMORY GAME",language:"HTML CSS", src:"p3.jpg"},
+				]
+			}
+		}
+	}
 </script>
 <style>
 	#project{
